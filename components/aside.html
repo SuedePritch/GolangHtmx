@@ -3,19 +3,44 @@
         .aside {
             height: 100%;
             width: 200px;
-            background-color: hsl(0, 0%, 93%);
-            color: hsl(0, 0%, 14%);
+            border-right: 2px solid hsl(0, 0%, 93%);
+            padding: 0.125rem;
+            /* background-color: hsl(0, 0%, 93%);
+            color: hsl(0, 0%, 14%); */
+        }
+
+        .username-list>li {
+            text-transform: uppercase;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: hsl(0, 0%, 14%);
+            color: hsl(0, 0%, 93%);
+            margin-left: 0.25rem;
+        }
+
+        .username-details-list>li {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 0.5rem;
+
+        }
+
+        .username-details-list>li:last-child {
+            margin-bottom: 1rem;
         }
     </style>
     <div class="aside">
-        <ul>
+        <ul class="username-list">
             {{if .}}
             {{range .}}
             <li>{{.Username}}</li>
-            <ul>
-                <li>Email: {{.Email}}</li>
-                <li>First Name: {{.FirstName}}</li>
-                <li>Last Name: {{.LastName}}</li>
+            <ul class="username-details-list">
+                <li>{{.FirstName}} {{.LastName}}</li>
+                <li>{{.Email}}</li>
+                <li>{{.Location}}</li>
+                <li>{{.DateOfBirth}}</li>
+                <li>{{.CreatedAt}}</li>
             </ul>
             {{end}}
             {{else}}

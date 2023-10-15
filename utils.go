@@ -32,13 +32,10 @@ func RenderHTMLTemplate(w http.ResponseWriter, data interface{}, templatePath ..
 	t, err := template.ParseFiles(templatePath...)
 	if err != nil {
 		http.Error(w, "Failed to parse templates", http.StatusInternalServerError)
-		log.Println("Error parsing templates:", err)
 		return
 	}
-	log.Println("Rendering template:", templatePath, "with data:", data)
 	err = t.Execute(w, data)
 	if err != nil {
 		http.Error(w, "Failed to render template", http.StatusInternalServerError)
-		log.Println("Error rendering template:", err)
 	}
 }

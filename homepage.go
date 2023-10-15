@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-    "fmt"
 )
 
 type User struct {
@@ -48,9 +47,6 @@ func Homepage(w http.ResponseWriter, r *http.Request) {
 		users = append(users, user)
 
 	}
-
-	// Now you have the user data in the 'users' slice, and you can use it as needed.
-fmt.Println(users)
 
 	RenderHTMLTemplate(w, users, "pages/index.html", "components/header.html", "components/aside.html")
 }

@@ -1,0 +1,54 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Goland Htmx Turso</title>
+    <script src="https://unpkg.com/htmx.org@1.9.6"
+        integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .main-content-container {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        background-color: hsl(0, 0%, 4%);
+        color: hsl(0, 0%, 78%);
+    }
+
+    a {
+        color: hsl(0, 0%, 88%);
+    }
+</style>
+
+{{template "header.html"}}
+
+<body>
+    <div class="main-content-container">
+        {{template "aside.html" .}}
+        <div class="main-content" style="
+            flex: 1;
+            ">
+            <h1>Goth Stack</h1>
+            <p>Go Turso Htmx</p>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<aside>
+    <style>
+        .aside {
+            height: 100%;
+            width: 200px;
+            background-color: hsl(0, 0%, 93%);
+            color: hsl(0, 0%, 14%);
+        }
+    </style>
+    <div class="aside">
+        <ul>
+            {{if .}}
+            {{range .}}
+            <li>{{.Username}}</li>
+            <ul>
+                <li>Email: {{.Email}}</li>
+                <li>First Name: {{.FirstName}}</li>
+                <li>Last Name: {{.LastName}}</li>
+            </ul>
+            {{end}}
+            {{else}}
+            <li>No users found.</li>
+            {{end}}
+        </ul>
+
+    </div>
+</aside>

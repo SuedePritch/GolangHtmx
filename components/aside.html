@@ -26,7 +26,7 @@
 
         }
 
-        .username-details-list>li:last-child {
+        #username-details-list>li:last-child {
             margin-bottom: 1rem;
         }
     </style>
@@ -34,13 +34,13 @@
         <ul class="username-list">
             {{if .}}
             {{range .}}
-            <li>{{.Username}}</li>
-            <ul class="username-details-list">
-                <li>{{.FirstName}} {{.LastName}}</li>
+            <li hx-get="/user-details" hx-target="#username-details-list" hx-swap="beforeend">{{.Username}}</li>
+            <ul id="username-details-list">
+                <!-- <li>{{.FirstName}} {{.LastName}}</li>
                 <li>{{.Email}}</li>
                 <li>{{.Location}}</li>
                 <li>{{.DateOfBirth}}</li>
-                <li>{{.CreatedAt}}</li>
+                <li>{{.CreatedAt}}</li> -->
             </ul>
             {{end}}
             {{else}}

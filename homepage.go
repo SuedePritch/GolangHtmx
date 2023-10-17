@@ -48,5 +48,5 @@ func Homepage(w http.ResponseWriter, r *http.Request) {
 
 	}
 
-	RenderHTMLTemplate(w, users, "pages/index.html", "components/header.html", "components/aside.html")
+	RenderHTMLTemplate(w, users, "pages/index.html", "components/header.html", "components/usercard.html")
 }
